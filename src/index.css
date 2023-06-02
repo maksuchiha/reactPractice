@@ -18,3 +18,8 @@ code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+#hw5-page-pre-junior {
+    display: grid;
+    gap: 30px;
+    padding: 0 15px;
+}

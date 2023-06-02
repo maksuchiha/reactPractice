@@ -1,8 +1,5 @@
 .App {
     --header_height: 60px;
-    display: grid;
-    gap: 30px;
-    padding: 100px 30px;
 }
 
 .hw {
