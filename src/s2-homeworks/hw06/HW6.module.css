@@ -1,5 +1,10 @@
 .buttonsContainer {
+    display: grid;
+    gap: 25px;
+    grid-template-columns: repeat(2, 150px);
 }
 
 .editableSpanContainer {
+    margin-bottom: 25px;
+
 }
