@@ -11,7 +11,12 @@ import s from './HW7.module.css'
 * 4 - сделать стили в соответствии с дизайном
 * */
 
-const arr = [
+export type selectorArrType = {
+    id: number
+    value: string
+}
+
+const arr: selectorArrType[] = [
     { id: 1, value: 'x' },
     { id: 2, value: 'y' },
     { id: 3, value: 'z' },
@@ -23,7 +28,6 @@ const HW7 = () => {
     return (
         <div id={'hw7'}>
             <div className={s2.hwTitle}>Homework #7</div>
-
             {/*демонстрация возможностей компонент:*/}
             <div className={s2.hw}>
                 <div className={s.container}>
