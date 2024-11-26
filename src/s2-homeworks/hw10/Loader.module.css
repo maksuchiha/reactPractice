@@ -1,3 +1,35 @@
 .loader {
     /*свг и/или анимация*/
+    /* Ellipse 4 */
+
+    border-radius: 50%;
+    height: 90px;
+    width: 90px;
+    background: conic-gradient(from 90deg at 50% 50%, rgba(255, 255, 255, 0) 0deg, #512DE4 360deg);
+    position: relative;
+    animation: elipce 2s ease-in-out infinite;
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        background: white;
+        width: 85%;
+        height: 85%;
+        border-radius: 50%;
+
+
+    }
+}
+
+@keyframes elipce {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
