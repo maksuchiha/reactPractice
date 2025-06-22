@@ -13,7 +13,15 @@ import {AppDispatch, AppRootState} from "../hw10/bll/store";
 * 4 - передать пропсы в SuperSelect
 * */
 
-const themes = [
+
+type ThemesValueTypes = 'light' | 'blue' | 'dark'
+
+export type ThemesType = {
+    id: number
+    value: ThemesValueTypes
+}
+
+const themes: ThemesType[] = [
     {id: 1, value: 'light'},
     {id: 2, value: 'blue'},
     {id: 3, value: 'dark'},
@@ -29,7 +37,6 @@ const HW12 = () => {
     }
 
     useEffect(() => {
-        console.log(themeId)
         document.documentElement.dataset.theme = themeId + ''
     }, [themeId])
 
