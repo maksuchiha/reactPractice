@@ -18,7 +18,7 @@ type ThemesValueTypes = 'light' | 'blue' | 'dark'
 
 export type ThemesType = {
     id: number
-    value: ThemesValueTypes
+    value: string | number
 }
 
 const themes: ThemesType[] = [

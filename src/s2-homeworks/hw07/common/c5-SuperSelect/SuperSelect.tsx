@@ -23,6 +23,7 @@ const SuperSelect: React.FC<SuperSelectPropsType> = ({
     onChangeOption,
     ...restProps
 }) => {
+    console.log(options)
     const mappedOptions: ReactElement[] = options
         ? options.map((o) => (
               <option
