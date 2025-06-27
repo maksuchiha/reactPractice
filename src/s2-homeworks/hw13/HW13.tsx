@@ -37,7 +37,7 @@ const HW13 = () => {
                 setCode('Код 200!')
                 setImage(success200)
                 // дописать
-                setText('...всё ок)\nкод 200 - обычно означает что скорее всего всё ок)')
+                setText('...всё ок) код 200 - обычно означает что скорее всего всё ок)')
 
             })
             .catch((e) => {
@@ -46,19 +46,19 @@ const HW13 = () => {
                     case "ERR_BAD_RESPONSE": {
                         setCode('Код 500!')
                         setImage(error500)
-                        setText('имитация ошибки на сервере\nошибка 500 - обычно означает что что-то сломалось на сервере, например база данных)')
+                        setText('имитация ошибки на сервере ошибка 500 - обычно означает что что-то сломалось на сервере, например база данных)')
                         return
                     }
                     case "ERR_BAD_REQUEST": {
                         setCode('Код 400!')
                         setImage(error400)
-                        setText('Ты не отправил success в body вообще!\nошибка 400 - обычно означает что скорее всего фронт отправил что-то не то на бэк!')
+                        setText('Ты не отправил success в body вообще! ошибка 400 - обычно означает что скорее всего фронт отправил что-то не то на бэк!')
                         return
                     }
                     default: {
                         setCode('Код errorUnknown!')
                         setImage(errorUnknown)
-                        setText('Network Error\nAxiosError')
+                        setText('Network Error AxiosError')
                     }
                 }
             })
