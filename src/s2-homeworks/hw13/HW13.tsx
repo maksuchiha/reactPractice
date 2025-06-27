@@ -16,7 +16,8 @@ import errorUnknown from './images/error.svg'
 
 const HW13 = () => {
     const [code, setCode] = useState('')
-    const [text, setText] = useState('')
+    const [mainText, setMainText] = useState('')
+    const [description, setDescription] = useState('')
     const [info, setInfo] = useState('')
     const [image, setImage] = useState('')
 
@@ -28,7 +29,8 @@ const HW13 = () => {
 
         setCode('')
         setImage('')
-        setText('')
+        setMainText('')
+        setDescription('')
         setInfo('...loading')
 
         axios
@@ -37,7 +39,8 @@ const HW13 = () => {
                 setCode('Код 200!')
                 setImage(success200)
                 // дописать
-                setText('...всё ок)\nкод 200 - обычно означает что скорее всего всё ок)')
+                setMainText('...всё ок)')
+                setDescription('код 200 - обычно означает что скорее всего всё ок)')
 
             })
             .catch((e) => {
@@ -46,19 +49,22 @@ const HW13 = () => {
                     case "ERR_BAD_RESPONSE": {
                         setCode('Код 500!')
                         setImage(error500)
-                        setText('имитация ошибки на сервере ошибка\n500 - обычно означает что что-то сломалось на сервере, например база данных)')
+                        setMainText('имитация ошибки на сервере ошибка')
+                        setDescription('500 - обычно означает что что-то сломалось на сервере, например база данных)')
                         return
                     }
                     case "ERR_BAD_REQUEST": {
                         setCode('Код 400!')
                         setImage(error400)
-                        setText('Ты не отправил success в body вообще!\nошибка 400 - обычно означает что скорее всего фронт отправил что-то не то на бэк!')
+                        setMainText('Ты не отправил success в body вообще!')
+                        setDescription('ошибка 400 - обычно означает что скорее всего фронт отправил что-то не то на бэк!')
                         return
                     }
                     default: {
                         setCode('Код errorUnknown!')
                         setImage(errorUnknown)
-                        setText('Network Error\nAxiosError')
+                        setMainText('Network Error')
+                        setDescription('AxiosError')
                     }
                 }
             })
@@ -121,9 +127,11 @@ const HW13 = () => {
                             {code}
                         </div>
                         <div id={'hw13-text'} className={s.text}>
-                            {text.split('\n').map((line, index) => (
-                                <p key={index}>{line}</p>
-                            ))}
+                            {mainText}
+
+                        </div>
+                        <div className={s.text}>
+                            {description}
                         </div>
                         <div id={'hw13-info'} className={s.info}>
                             {info}
