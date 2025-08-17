@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/reactPractice/static/css/main.cad893f4.css",
-    "main.js": "/reactPractice/static/js/main.e002bfa0.js",
+    "main.css": "/reactPractice/static/css/main.8df97dfe.css",
+    "main.js": "/reactPractice/static/js/main.0be7847f.js",
     "static/js/453.e1f3ad02.chunk.js": "/reactPractice/static/js/453.e1f3ad02.chunk.js",
     "static/media/avatar.png": "/reactPractice/static/media/avatar.d947cb9d0d13765666b6.png",
     "static/media/200.svg": "/reactPractice/static/media/200.2b4de1542921864a6ecb8c3301ea4670.svg",
@@ -14,12 +14,12 @@
     "static/media/checked.svg": "/reactPractice/static/media/checked.0b6a1bcf5d417ff0a947.svg",
     "index.html": "/reactPractice/index.html",
     "static/media/burger.svg": "/reactPractice/static/media/burger.e4e6b98e4ee0b2dfcd76d02a9eed2e34.svg",
-    "main.cad893f4.css.map": "/reactPractice/static/css/main.cad893f4.css.map",
-    "main.e002bfa0.js.map": "/reactPractice/static/js/main.e002bfa0.js.map",
+    "main.8df97dfe.css.map": "/reactPractice/static/css/main.8df97dfe.css.map",
+    "main.0be7847f.js.map": "/reactPractice/static/js/main.0be7847f.js.map",
     "453.e1f3ad02.chunk.js.map": "/reactPractice/static/js/453.e1f3ad02.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.cad893f4.css",
-    "static/js/main.e002bfa0.js"
+    "static/css/main.8df97dfe.css",
+    "static/js/main.0be7847f.js"
   ]
 }
