@@ -21,6 +21,7 @@ const getTechs = (find: string) => {
         )
         .catch((e) => {
             alert(e.response?.data?.errorText || e.message)
+            throw e
         })
 }
 
@@ -34,11 +35,14 @@ const HW14 = () => {
         setLoading(true)
         getTechs(value)
             .then((res) => {
+
                 // делает студент
-
                 // сохранить пришедшие данные
-
+                setTechs(res.data.techs)
                 //
+            })
+            .then(() => {
+                setLoading(false)
             })
     }
 
@@ -48,12 +52,13 @@ const HW14 = () => {
 
         // добавить/заменить значение в квери урла
         // setSearchParams(
-
+        setSearchParams(value ? { find: value } : {})
         //
     }
 
     useEffect(() => {
         const params = Object.fromEntries(searchParams)
+
         sendQuery(params.find || '')
         setFind(params.find || '')
     }, [])
