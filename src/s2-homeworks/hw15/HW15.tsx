@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import s2 from '../../s1-main/App.module.css'
 import s from './HW15.module.css'
-import axios from 'axios'
+import axios, {AxiosError} from 'axios'
 import SuperPagination from './common/c9-SuperPagination/SuperPagination'
 import {useSearchParams} from 'react-router-dom'
 import SuperSort from './common/c10-SuperSort/SuperSort'
@@ -23,20 +23,28 @@ type TechType = {
 
 type ParamsType = {
     sort: string
-    page: number
-    count: number
+    page: string
+    count: string
 }
 
-const getTechs = (params: ParamsType) => {
-    return axios
-        .get<{ techs: TechType[], totalCount: number }>(
+type GetTechsResponse = { techs: TechType[]; totalCount: number };
+
+export const getTechs = async (
+    params: ParamsType
+): Promise<GetTechsResponse> => {
+    try {
+        const res = await axios.get<GetTechsResponse>(
             'https://samurai.it-incubator.io/api/3.0/homework/test3',
-            {params}
-        )
-        .catch((e) => {
-            alert(e.response?.data?.errorText || e.message)
-        })
-}
+            { params }
+        );
+        return res.data;
+    } catch (e) {
+        const err = e as AxiosError<{ errorText?: string }>;
+        alert(err.response?.data?.errorText ?? err.message);
+        throw e;
+    }
+};
+
 
 const HW15 = () => {
     const [sort, setSort] = useState('')
@@ -47,45 +55,53 @@ const HW15 = () => {
     const [searchParams, setSearchParams] = useSearchParams()
     const [techs, setTechs] = useState<TechType[]>([])
 
-    const sendQuery = (params: any) => {
+    const sendQuery = (params: ParamsType) => {
         setLoading(true)
         getTechs(params)
             .then((res) => {
                 // делает студент
-
+                setTotalCount(res.totalCount)
                 // сохранить пришедшие данные
-
+                setTechs(res.techs)
                 //
+            })
+            .finally(() => {
+                setLoading(false)
             })
     }
 
-    const onChangePagination = (newPage: number, newCount: number) => {
+    const onChangePagination = (newPage: string, newCount: string) => {
         // делает студент
-
+        setPage(+newPage)
+        setCount(+newCount)
         // setPage(
         // setCount(
 
         // sendQuery(
         // setSearchParams(
+        sendQuery({page: newPage, count: newCount, sort})
+        setSearchParams({ page: newPage, count: newCount, sort })
 
         //
     }
 
     const onChangeSort = (newSort: string) => {
         // делает студент
-
+        console.log(newSort)
         // setSort(
+        setSort(newSort)
         // setPage(1) // при сортировке сбрасывать на 1 страницу
-
+        setPage(1)
         // sendQuery(
         // setSearchParams(
-
+        sendQuery({ page: `${page}`, count: `${count}`, sort: newSort })
         //
+        setSearchParams({ page: `${page}`, count: `${count}`, sort: newSort })
     }
 
     useEffect(() => {
         const params = Object.fromEntries(searchParams)
-        sendQuery({page: params.page, count: params.count})
+        sendQuery({page: params.page, count: params.count, sort})
         setPage(+params.page || 1)
         setCount(+params.count || 4)
     }, [])
@@ -107,7 +123,7 @@ const HW15 = () => {
             <div className={s2.hwTitle}>Homework #15</div>
 
             <div className={s2.hw}>
-                {idLoading && <div id={'hw15-loading'} className={s.loading}>Loading...</div>}
+                {idLoading && <div id={'hw15-loading'} className={s.loading}></div>}
 
                 <SuperPagination
                     page={page}
