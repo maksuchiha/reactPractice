@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/reactPractice/static/css/main.8df97dfe.css",
-    "main.js": "/reactPractice/static/js/main.0be7847f.js",
+    "main.css": "/reactPractice/static/css/main.618f5791.css",
+    "main.js": "/reactPractice/static/js/main.3cf71633.js",
     "static/js/453.e1f3ad02.chunk.js": "/reactPractice/static/js/453.e1f3ad02.chunk.js",
     "static/media/avatar.png": "/reactPractice/static/media/avatar.d947cb9d0d13765666b6.png",
     "static/media/200.svg": "/reactPractice/static/media/200.2b4de1542921864a6ecb8c3301ea4670.svg",
@@ -14,12 +14,15 @@
     "static/media/checked.svg": "/reactPractice/static/media/checked.0b6a1bcf5d417ff0a947.svg",
     "index.html": "/reactPractice/index.html",
     "static/media/burger.svg": "/reactPractice/static/media/burger.e4e6b98e4ee0b2dfcd76d02a9eed2e34.svg",
-    "main.8df97dfe.css.map": "/reactPractice/static/css/main.8df97dfe.css.map",
-    "main.0be7847f.js.map": "/reactPractice/static/js/main.0be7847f.js.map",
+    "static/media/unset.svg": "/reactPractice/static/media/unset.d3f4e9d8f863d2a82cb10bbc01263dc1.svg",
+    "static/media/down.svg": "/reactPractice/static/media/down.1550160f1a5288f54fa7cb6e52905961.svg",
+    "static/media/up.svg": "/reactPractice/static/media/up.0cf4de66f92a205fa9cb9e741a552581.svg",
+    "main.618f5791.css.map": "/reactPractice/static/css/main.618f5791.css.map",
+    "main.3cf71633.js.map": "/reactPractice/static/js/main.3cf71633.js.map",
     "453.e1f3ad02.chunk.js.map": "/reactPractice/static/js/453.e1f3ad02.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8df97dfe.css",
-    "static/js/main.0be7847f.js"
+    "static/css/main.618f5791.css",
+    "static/js/main.3cf71633.js"
   ]
 }
